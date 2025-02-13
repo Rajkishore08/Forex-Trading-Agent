@@ -41,8 +41,8 @@ This AI-driven Forex Trading Agent integrates **AI, blockchain, and decentralize
 ## Setup & Installation
 ### 1. Clone the Repository
 ```sh
-git clone https://github.com/your-username/forex-trading-agent.git
-cd forex-trading-agent
+git clone https://github.com/Rajkishore08/Forex-Trading-Agent
+cd Forex-Trading-Agent
 ```
 
 ### 2. Install Backend Dependencies
