@@ -1,10 +1,13 @@
 # Forex-Trading-Agent
-Forex Trading Agent is a powerful, AI-driven, DeFi-integrated trading system leveraging Celo, Safe Smart Accounts, and Fileverse SDK to create a secure, transparent, and efficient solution! 🚀
+Forex Trading Agent is a powerful, AI-driven, DeFi-integrated trading system leveraging Celo, Safe Smart Accounts, DuckAI, Mech Marketplace, and Fileverse SDK to create a secure, transparent, and efficient solution! 🚀
+
 ## Overview
 This AI-driven Forex Trading Agent integrates **AI, blockchain, and decentralized storage** to execute secure and profitable Forex trades. It leverages:
 
 - **Celo Blockchain & Safe Smart Accounts** for secure trade execution.
 - **AI-driven market analysis** for arbitrage and DCA strategies.
+- **DuckAI** for AI-powered Forex trading insights.
+- **Mech Marketplace** for automated strategy execution.
 - **Fileverse SDK & IPFS** for decentralized trade logging and transparency.
 
 ## Tech Stack
@@ -12,6 +15,8 @@ This AI-driven Forex Trading Agent integrates **AI, blockchain, and decentralize
 - **Backend:** Node.js (Trade Execution & Safe Transactions)
 - **AI Model:** Python (Flask-based AI for Arbitrage & DCA)
 - **Blockchain:** Celo Network + Safe Smart Accounts
+- **AI Agent:** DuckAI for AI-driven trade insights
+- **Automation:** Mech Marketplace for executing trading strategies
 - **Storage:** Fileverse SDK (IPFS-based logging)
 
 ## Features
@@ -19,16 +24,20 @@ This AI-driven Forex Trading Agent integrates **AI, blockchain, and decentralize
 - ✅ Secure transaction execution with **Safe Smart Accounts**
 - ✅ Gasless transactions and automated approvals
 - ✅ Decentralized trade logging using **Fileverse SDK (IPFS)**
+- ✅ AI-driven Forex trade insights from **DuckAI**
+- ✅ Automated strategy execution via **Mech Marketplace**
 - ✅ User-friendly **React.js dashboard** for real-time trade monitoring
 
 ## Workflow
 ### 1. Market Data Analysis
 - Fetch Forex rates and stablecoin prices from **Celo DEXs & Oracles**.
 - AI detects arbitrage opportunities and executes **DCA (Dollar-Cost Averaging)** trades.
+- **DuckAI provides real-time trade insights** for optimal decision-making.
 
 ### 2. Secure Trade Execution
 - If an arbitrage opportunity is found, a **Safe Smart Account** executes the trade.
 - Gasless transactions ensure cost efficiency.
+- **Mech Marketplace handles automated strategy execution**.
 
 ### 3. Trade Data Logging
 - Trade details, performance metrics, and AI decision logs are **stored on IPFS** using Fileverse SDK.
@@ -58,6 +67,8 @@ CELO_RPC_URL=https://forno.celo.org
 PRIVATE_KEY=your-private-key
 SAFE_ADDRESS=your-safe-wallet-address
 FILEVERSE_API_KEY=your-fileverse-api-key
+DUCKAI_API_URL=https://api.duckai.network/analyze
+MECH_MARKETPLACE_API=https://mech.marketplace/api
 ```
 
 ### 4. Start Backend Server
@@ -124,6 +135,32 @@ POST /api/trade
 GET /api/trades
 ```
 
+### 3. Get AI Trade Insights (DuckAI)
+```http
+POST /api/duckai/analyze
+```
+**Payload:**
+```json
+{
+  "market_data": { "cUSD": 1.0, "cEUR": 1.08 }
+}
+```
+
+### 4. Register & Execute Strategy (Mech Marketplace)
+```http
+POST /api/mech/execute
+```
+**Payload:**
+```json
+{
+  "name": "Forex AI Trader",
+  "strategy": "Arbitrage + DCA",
+  "pair": "cUSD/cEUR",
+  "amount": 100,
+  "action": "buy"
+}
+```
+
 ## Frontend UI (React.js)
 Displays trade insights, performance metrics, and trade history.
 ```jsx
@@ -167,21 +204,11 @@ const Dashboard = () => {
 export default Dashboard;
 ```
 
-## Deployment
-### 1. Backend Deployment (Render)
-- Deploy **backend** on Render with `server.js` as the entry point.
-
-### 2. Frontend Deployment (Vercel)
-- Deploy **frontend** on Vercel with `npm run build`.
-
-### 3. Smart Contract Deployment (Celo)
-```sh
-npx hardhat run scripts/deploy.js --network celo
-```
-
 ## Hackathon Tracks Covered
 ✅ **DeFAI (Celo x Safe):** Uses **Safe Smart Accounts** for secure Forex trading execution.  
 ✅ **AI Advancement (Fileverse SDK):** Logs trades to **IPFS using Fileverse SDK** for transparency.  
+✅ **Smart Account Tooling (DuckAI):** Integrates **DuckAI for AI-driven Forex insights**.  
+✅ **Smart Account Tooling (Mech Marketplace):** Registers an AI trading agent for automated execution.  
 
 ## Future Enhancements
 - **Multi-chain Arbitrage** (Ethereum, BSC, Celo).
@@ -195,6 +222,5 @@ npx hardhat run scripts/deploy.js --network celo
 This project is licensed under the MIT License.
 
 ---
-
 ### 🌟 **If you find this useful, give it a star!** ⭐
 
